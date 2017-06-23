@@ -1,39 +1,39 @@
 @charset "utf-8";
 /* CSS Document */
 
-.masonryitem {
+.masonrygrid-item {
     float: left;
     position: relative;
     line-height: 1em;
 }
  
 .grid-sizer { width: 20%; }
-.masonryitem { width: 20%; }
+.masonrygrid-item { width: 20%; }
  
 @media screen and (max-width: 1224px) {
   /* 10 columns for larger screens */
   .grid-sizer { width: 33.33%; }
-  .masonryitem { width: 33.33%; }
+  .masonrygrid-item { width: 33.33%; }
 }
  
 @media screen and (max-width: 720px) {
   /* 10 columns for larger screens */
   .grid-sizer { width: 50%; }
-  .masonryitem { width: 50%; }
+  .masonrygrid-item { width: 50%; }
 }
  
 @media screen and (max-width: 480px) {
   /* 10 columns for larger screens */
   .grid-sizer { width: 100%; }
-  .masonryitem { width: 100%; }
+  .masonrygrid-item { width: 100%; }
 }
- 
-.masonryimage {
+
+.masonrygrid-item img {
     max-width: 100%;
     margin: 0;
     display: block;
 }
 
-.masonryimage:after {
+.masonrygrid-item img:after {
     clear:both;
 }

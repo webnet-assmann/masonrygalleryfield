@@ -17,8 +17,8 @@ $doc = JFactory::getDocument();
 JHtml::_('jQuery.Framework');
 
 $doc->addStylesheet('plugins/fields/masonrygallery/media/css/masonrygallery.css');
-$doc->addScript('plugins/fields/masonrygallery/media/js/masonry.pkgd.min.js');
-$doc->addScript('plugins/fields/masonrygallery/media/js/masonrygallery.js');
+$doc->addScript('plugins/fields/masonrygallery/media/js/masonrygallery.js', true, true);
+$doc->addScript('plugins/fields/masonrygallery/media/js/masonry.pkgd.min.js', false, true);
 
 // get the folder name in images directory
 $path = $field->value;
@@ -30,13 +30,11 @@ $filter = '.\.jpg$';
 $images = JFolder::files('images/' . $path);
 ?>
 
-<div id="container">
-	<div class="row">
-	<div class="grid-sizer"></div>  
+<div class="masonrygrid" data-masonry='{ "columnWidth": ".grid-sizer", "itemSelector": ".masonrygrid-item" }'>
+	<div class="grid-sizer"></div>
         <?php foreach ($images as $image) : ?>
-          <div class="masonryitem <?php echo $class; ?>">
+          <div class="masonrygrid-item <?php echo $class; ?>">
 				<?php echo JHtml::_('image', 'images/' . $path . '/' . $image, $image, array('title' => $image, 'class' => 'masonryimage'), false); ?>
           </div>
       	<?php endforeach; ?>
-	</div>
 </div>
