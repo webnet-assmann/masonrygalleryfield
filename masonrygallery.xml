@@ -13,6 +13,7 @@
 		<filename plugin="masonrygallery">masonrygallery.php</filename>
 		<folder>language</folder>
 		<folder>params</folder>
+		<folder>media</folder>
 		<folder>tmpl</folder>
 	</files>
 	<languages>

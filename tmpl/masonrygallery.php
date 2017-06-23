@@ -30,11 +30,13 @@ $filter = '.\.jpg$';
 $images = JFolder::files('images/' . $path);
 ?>
 
-<div id="container">  
+<div id="container">
+	<div class="row">
 	<div class="grid-sizer"></div>  
         <?php foreach ($images as $image) : ?>
-          <div class="item <?php echo $class; ?>">
-				<?php echo JHtml::_('image', 'images/' . $path . '/' . $image, $image, array('title' => $image), false); ?>
+          <div class="masonryitem <?php echo $class; ?>">
+				<?php echo JHtml::_('image', 'images/' . $path . '/' . $image, $image, array('title' => $image, 'class' => 'masonryimage'), false); ?>
           </div>
       	<?php endforeach; ?>
+	</div>
 </div>
