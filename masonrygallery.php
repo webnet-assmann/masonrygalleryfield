@@ -16,8 +16,11 @@ JLoader::import('components.com_fields.libraries.fieldslistplugin', JPATH_ADMINI
  *
  * @since  3.7.0
  */
+
+
 class PlgFieldsMasonrygallery extends FieldsListPlugin
 {
+
 	/**
 	 * Transforms the field into a DOM XML element and appends it as a child on the given parent.
 	 *
@@ -29,8 +32,12 @@ class PlgFieldsMasonrygallery extends FieldsListPlugin
 	 *
 	 * @since   3.7.0
 	 */
+
 	public function onCustomFieldsPrepareDom($field, DOMElement $parent, JForm $form)
 	{
+
+
+
 		$fieldNode = parent::onCustomFieldsPrepareDom($field, $parent, $form);
 
 		if (!$fieldNode)
@@ -38,8 +45,15 @@ class PlgFieldsMasonrygallery extends FieldsListPlugin
 			return $fieldNode;
 		}
 
-        $fieldNode->setAttribute('type', 'folderlist');
-        $fieldNode->setAttribute('directory', 'images');
+		$imgdirectory = 'images';
+
+		if (!empty($field->fieldparams->get('directory'))) :
+		$imgdirectory = 'images/' . $field->fieldparams->get('directory');
+        endif;
+
+		if ($field->fieldparams->get('multiple') == '0') :
+		$fieldNode->setAttribute('type', 'folderlist');
+        $fieldNode->setAttribute('directory', $imgdirectory);
         $fieldNode->setAttribute('required', false);
         $fieldNode->setAttribute('hide_none', false);
         $fieldNode->setAttribute('hide_default', true);
@@ -47,9 +61,14 @@ class PlgFieldsMasonrygallery extends FieldsListPlugin
         $fieldNode->setAttribute('default', '/');
         $fieldNode->setAttribute('label', 'PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_LABEL');
         $fieldNode->setAttribute('description', 'PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_DESC');
-
-
+        else :
+	        $fieldNode->setAttribute('type', 'filelist');
+	        $fieldNode->setAttribute('directory', $imgdirectory);
+	        $fieldNode->setAttribute('filter','\.png$|\.gif$|\.jpg$|\.bmp$|\.ico$|\.jpeg$|\.psd$|\.eps$');
+	    endif;
 
         return $fieldNode;
 	}
+
+
 }
