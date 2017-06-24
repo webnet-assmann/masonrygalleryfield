@@ -34,6 +34,15 @@
 				description="PLG_FIELDS_MASONRYGALLERY_PARAMS_CONTAINER_CLASS_DESC"
 				size="40"
 			/>
+			
+			<field
+					 name="column_width" 
+					 type="text" 
+					 default="" 
+					 label="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_LABEL" 
+					 description="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_DESC" 
+					 size="20" 
+				/>				
 		</fieldset>
 	</fields>
 </form>
