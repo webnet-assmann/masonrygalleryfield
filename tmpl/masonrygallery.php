@@ -12,13 +12,13 @@ if (!$field->value || $field->value == '-1') {
     return;
 }
 
-$doc = JFactory::getDocument();
-
 JHtml::_('jQuery.Framework');
 
-$doc->addStylesheet('plugins/fields/masonrygallery/media/css/masonrygallery.css');
-$doc->addScript('plugins/fields/masonrygallery/media/js/masonrygallery.js', true, true);
-$doc->addScript('plugins/fields/masonrygallery/media/js/masonry.pkgd.min.js', false, true);
+$doc = JFactory::getDocument();
+
+JHtml::_('stylesheet', 'plg_fields_masonrygallery/masonrygallery.css', array(), true);
+JHtml::_('script', 'plg_fields_masonrygallery/masonry.pkgd.min.js', array('version' => 'auto', 'relative' => true), array('defer' => true));
+
 
 // get the folder name in images directory
 $path = $field->value;
