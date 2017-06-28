@@ -1,14 +1,23 @@
 @charset "utf-8";
 /* CSS Document */
 
-.masonrygrid-item {
-    float: left;
-    position: relative;
-    line-height: 1em;
+html { overflow-y: scroll; }
+
+.masonrygrid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
  
 .grid-sizer { width: 20%; }
 .masonrygrid-item { width: 20%; }
+
+.masonrygrid-item {
+  float: left;
+  line-height: 1em;
+  position: relative;
+}
+
  
 @media screen and (max-width: 1224px) {
   /* 10 columns for larger screens */

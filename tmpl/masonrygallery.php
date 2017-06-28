@@ -17,7 +17,7 @@ JHtml::_('jQuery.Framework');
 $doc = JFactory::getDocument();
 
 JHtml::_('stylesheet', 'plg_fields_masonrygallery/masonrygallery.css', array(), true);
-JHtml::_('script', 'plg_fields_masonrygallery/masonry.pkgd.min.js', array('version' => 'auto', 'relative' => true), array('defer' => true));
+JHtml::_('script', 'plg_fields_masonrygallery/masonry.pkgd.min.js', array('version' => 'auto', 'relative' => true), array('async' => true));
 
 
 // get the folder name in images directory
@@ -38,3 +38,4 @@ $images = JFolder::files('images/' . $path);
           </div>
       	<?php endforeach; ?>
 </div>
+<p class="clearfix"></p>
