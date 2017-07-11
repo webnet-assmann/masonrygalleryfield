@@ -14,13 +14,20 @@
 		<filename>language/en-GB/en-GB.plg_fields_masonrygallery.sys.ini</filename>
 		<filename>language/en-GB/en-GB.plg_fields_masonrygallery.ini</filename>
 		<filename>media/css/masonrygallery.css</filename>
+		<filename>media/css/lightbox.css</filename>
 		<filename>media/js/masonry.pkgd.min.js</filename>
+		<filename>media/js/lightbox.js</filename>
+		<filename>media/images/close.png</filename>
+		<filename>media/images/loading.gif</filename>
+		<filename>media/images/next.png</filename>
+		<filename>media/images/prev.png</filename>
 		<filename>params/masonrygallery.xml</filename>
 		<filename>tmpl/masonrygallery.php</filename>
 	</files>
 	<media destination="plg_fields_masonrygallery" folder="media">
 		<folder>css</folder>
 		<folder>js</folder>
+		<folder>images</folder>
 	</media>
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.plg_fields_masonrygallery.ini</language>
@@ -39,7 +46,7 @@
 					recursive="true"
 					default="/"
 					label="PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_LABEL"
-					description=" "
+					description="PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_DESC"
 				>
 					<option value="/">/</option>
 				</field>

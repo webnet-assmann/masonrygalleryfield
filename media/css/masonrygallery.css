@@ -8,14 +8,25 @@ html { overflow-y: scroll; }
   display: block;
   clear: both;
 }
- 
-.grid-sizer { width: 20%; }
-.masonrygrid-item { width: 20%; }
+
+.grid-sizer { width: 25%; }
+.masonrygrid-item { width: 25%; }
 
 .masonrygrid-item {
   float: left;
   line-height: 1em;
   position: relative;
+}
+
+.lb-image, .lb-dataContainer {
+ max-width: 100%;
+ height: auto !important;
+ width: 100%;
+}
+
+.lb-outerContainer {
+ max-width: 100%;
+ height: auto !important;
 }
 
  

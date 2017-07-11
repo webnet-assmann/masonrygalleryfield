@@ -17,12 +17,16 @@ JHtml::_('jQuery.Framework');
 $doc = JFactory::getDocument();
 
 JHtml::_('stylesheet', 'plg_fields_masonrygallery/masonrygallery.css', array(), true);
+JHtml::_('stylesheet', 'plg_fields_masonrygallery/lightbox.css', array(), true);
 JHtml::_('script', 'plg_fields_masonrygallery/masonry.pkgd.min.js', array('version' => 'auto', 'relative' => true), array('async' => true));
+JHtml::_('script', 'plg_fields_masonrygallery/lightbox.js', array('version' => 'auto', 'relative' => true), array('async' => true));
 
 
 // get the folder name in images directory
 $path = $field->value;
 $class = $fieldParams->get('container_class');
+//$columnWidth = $fieldParams->get('column_width');
+//$itemWidth = $columnWidth . '%';
 
 // read the .jpg from the selected directory
 jimport('joomla.filesystem.folder');
@@ -34,7 +38,10 @@ $images = JFolder::files('images/' . $path);
 	<div class="grid-sizer"></div>
         <?php foreach ($images as $image) : ?>
           <div class="masonrygrid-item <?php echo $class; ?>">
-				<?php echo JHtml::_('image', 'images/' . $path . '/' . $image, $image, array('title' => $image, 'class' => 'masonryimage'), false); ?>
+
+				<?php $img = JHtml::_('image', 'images/' . $path . '/' . $image, $image, array('title' => $image, 'class' => 'masonryimage'), false); ?>
+                
+                <?php echo JHtml::_('link', 'images/' . $path . '/' . $image, $img, array('data-lightbox' => 'gallerie')); ?>
           </div>
       	<?php endforeach; ?>
 </div>

@@ -47,11 +47,6 @@ class PlgFieldsMasonrygallery extends FieldsListPlugin
 
 		$imgdirectory = 'images';
 
-		if (!empty($field->fieldparams->get('directory'))) :
-		$imgdirectory = 'images/' . $field->fieldparams->get('directory');
-        endif;
-
-		if ($field->fieldparams->get('multiple') == '0') :
 		$fieldNode->setAttribute('type', 'folderlist');
         $fieldNode->setAttribute('directory', $imgdirectory);
         $fieldNode->setAttribute('required', false);
@@ -61,11 +56,6 @@ class PlgFieldsMasonrygallery extends FieldsListPlugin
         $fieldNode->setAttribute('default', '/');
         $fieldNode->setAttribute('label', 'PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_LABEL');
         $fieldNode->setAttribute('description', 'PLG_FIELDS_MASONRYGALLERY_PARAMS_DIRECTORY_DESC');
-        else :
-	        $fieldNode->setAttribute('type', 'filelist');
-	        $fieldNode->setAttribute('directory', $imgdirectory);
-	        $fieldNode->setAttribute('filter','\.png$|\.gif$|\.jpg$|\.bmp$|\.ico$|\.jpeg$|\.psd$|\.eps$');
-	    endif;
 
         return $fieldNode;
 	}
