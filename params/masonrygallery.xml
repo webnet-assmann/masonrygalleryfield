@@ -26,6 +26,18 @@
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
+			
+			<field
+				name="lightbox"
+				type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="PLG_FIELDS_MASONRYGALLERY_PARAMS_LIGHTBOX_LABEL"
+				description="PLG_FIELDS_MASONRYGALLERY_PARAMS_LIGHTBOX_DESC"
+			>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
 
 			<field
 				name="container_class"
@@ -36,13 +48,13 @@
 			/>
 			
 			<field
-					 name="column_width" 
-					 type="text" 
-					 default="" 
-					 label="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_LABEL" 
-					 description="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_DESC" 
-					 size="20" 
-				/>				
+				 name="column_width" 
+				 type="text" 
+				 default="" 
+				 label="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_LABEL" 
+				 description="PLG_FIELDS_MASONRYGALLERY_PARAMS_COLUMN_WIDTH_DESC" 
+				 size="20" 
+			/>				
 		</fieldset>
 	</fields>
 </form>
