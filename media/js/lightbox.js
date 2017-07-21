@@ -509,3 +509,9 @@
 
   return new Lightbox();
 }));
+
+lightbox.option({
+  'resizeDuration': 200,
+  'wrapAround': true,
+  'albumLabel': "Bild %1 von %2"
+})

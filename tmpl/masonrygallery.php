@@ -52,4 +52,3 @@ $images = JFolder::files('images/' . $path);
           </div>
       	<?php endforeach; ?>
 </div>
-<p class="clearfix"></p>
